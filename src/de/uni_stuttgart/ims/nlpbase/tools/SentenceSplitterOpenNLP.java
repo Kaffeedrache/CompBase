@@ -19,6 +19,11 @@ import opennlp.tools.sentdetect.SentenceModel;
  * @author kesslewd
  */
 public class SentenceSplitterOpenNLP extends SentenceSplitter {
+
+   /**
+    * TODO parametrize
+    */
+   private String modelSentenceSplitterFileName = "models/en-sent.bin";
    
    private FileInputStream modelSentenceSplitterFile;
    private SentenceDetectorME sentenceDetector;
@@ -30,7 +35,7 @@ public class SentenceSplitterOpenNLP extends SentenceSplitter {
     * @throws FileNotFoundException If model file not found (supposed to be in 'models/en-sent.bin')
     */
    public void initializeOpenNLP () throws FileNotFoundException, IOException {
-      modelSentenceSplitterFile = new FileInputStream("models/en-sent.bin");
+      modelSentenceSplitterFile = new FileInputStream(modelSentenceSplitterFileName);
       SentenceModel modelSentenceSplitter = new SentenceModel(modelSentenceSplitterFile);
       sentenceDetector = new SentenceDetectorME(modelSentenceSplitter);
    }

@@ -27,7 +27,7 @@ public class POSTaggerStanford extends POSTagger {
    /**
     * TODO parametrize
     */
-   private String modelTaggerFile = "../models/english-left3words-distsim.tagger";
+   private String modelTaggerFile = "models/english-left3words-distsim.tagger";
    
    /**
     * The POSTagger.

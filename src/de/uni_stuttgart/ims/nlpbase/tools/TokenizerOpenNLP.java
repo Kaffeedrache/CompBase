@@ -22,7 +22,11 @@ import opennlp.tools.tokenize.TokenizerModel;
  * @author kesslewd
  */
 public class TokenizerOpenNLP extends Tokenizer implements Closeable {
-   
+
+   /**
+    * TODO parametrize
+    */
+   private String modelTokenizerFileName = "models/en-token.bin";
    
    // OpenNLP
    private InputStream modelTokenizerFile = null;
@@ -38,7 +42,7 @@ public class TokenizerOpenNLP extends Tokenizer implements Closeable {
     * @throws FileNotFoundException If model file not found (supposed to be in 'models/en-sent.bin')
     */
    public TokenizerOpenNLP () throws FileNotFoundException, IOException  {
-      modelTokenizerFile = new FileInputStream("models/en-token.bin");
+      modelTokenizerFile = new FileInputStream(modelTokenizerFileName);
       TokenizerModel modelTokenizer = new TokenizerModel(modelTokenizerFile);
       tokenizerOpenNLP = new TokenizerME(modelTokenizer);
    }

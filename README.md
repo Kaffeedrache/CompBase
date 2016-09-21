@@ -21,15 +21,21 @@ Basic classes for working with parsed sentences, comparison information, NLP too
 ## Stuff from other people
 
 Needed for the classes in `de.uni_stuttgart.ims.nlpbase.tools`, i.e., sentence splitter, tokenizer, POS tagger. You can always opt to not use these classes or use only one of them.
+The code assumes the model files are located in `models/` and are called exactly what is written below.
 
-- [OpenNLP Tools](https://opennlp.apache.org), aka `opennlp-tools-1.5.2-incubating.jar`
 - [Stanford CoreNLP](http://stanfordnlp.github.io/CoreNLP/) aka `stanford-corenlp-3.2.0.jar`
-
-
+   You will need the model file
+   `english-left3words-distsim.tagger` for `POSTaggerStanford`.
+- [OpenNLP Tools](https://opennlp.apache.org), aka `opennlp-tools-1.5.2-incubating.jar`.
+   You will need the model files
+   `en-sent.bin` for `SentenceSplitterOpenNLP` and
+   `en-token.bin` for `TokenizerOpenNLP`
+   
 
 ## Usage
 
 These are only helper classes, there is no main method. But you will need this for other projects.
+You will probably not need all the classes, so you can only just compile those that you need at that time.
 
 Compile all classes (this assumes you have the two needed jar files in the folder `lib` and want to have the class files in `bin`):
 
